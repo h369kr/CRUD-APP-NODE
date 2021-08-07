@@ -1,0 +1,48 @@
+<h3>{{viewTitle}}</h3>
+
+    <form action="/employee" method="POST" autocomplete="off">
+        <input type="hidden" name="_id" value="{{employee._id}}">
+
+        <div class="form-group">
+            <label>Id</label>
+            <input type="number" class="form-control" name="Id" value="{{employee.Id}}" placeholder="Id">
+                        
+        </div>
+
+        <div class="form-group">
+            <label>EmployeeCode</label>
+            <input type="text" class="form-control" name="EmployeeCode" value="{{employee.EmployeeCode}}" placeholder="EmployeeCode">
+                        
+        </div>
+
+        <div class="form-group">
+            <label>EmployeeName</label>
+            <input type="text" class="form-control" name="EmployeeName" value="{{employee.EmployeeName}}" placeholder="Full Name">
+                        <div class="text-danger">
+                {{employee.EmployeeNameError}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label>EmployeeEmail</label>
+            <input type="email" class="form-control" name="EmployeeEmail" value="{{employee.EmployeeEmail}}" placeholder="Email">
+            <div class="text-danger">
+                    {{employee.EmployeeEmailError}}
+                </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group md-6">
+                <label>IsActive</label>
+                <input type="number" name="IsActive" placeholder="IsActive" value="{{employee.IsActive}}" class="form-control">
+                
+             </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-info"><i class="fa fa-database"></i>Submit</button>
+            <a href="/employee/list" class="btn btn-danger">
+                <i class="fa fa-list-alt"></i>View All
+            </a>
+        </div>
+
+
+    </form>
